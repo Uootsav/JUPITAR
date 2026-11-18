@@ -19,3 +19,11 @@ components whose original licenses must be retained and audited before sale.
 No third-party fictional artwork, sounds, voice clones or logos are included.
 Name/trademark clearance has not been performed. Dependencies currently use ranges;
 resolve, lock, audit and collect notices for the actual binary before distribution.
+
+## 0.4 UI additions
+PySide6/Qt WebEngine and bundled Chromium add separate license/notice obligations.
+Review the exact versions and distribution requirements before sale. Dynamic
+libraries are packaged by PyInstaller hooks. tools/collect_notices.py collects
+installed-distribution notices, not a complete binary SBOM or legal compliance
+certification. Rajdhani is downloaded with its OFL license by both build workflows.
+The orbital renderer, CSS and website copy are original project source.

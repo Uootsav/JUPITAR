@@ -1,22 +1,29 @@
-JUPITAR 0.3.0 - STANDALONE INSTALLER BUILD PACKAGE
+JUPITAR 0.4 PREVIEW - ORBITAL UI + DOWNLOAD PROGRESS + WEBSITE
 
-IMPORTANT: This ZIP is SOURCE CODE, not a ready-to-run Windows installer.
-The app was converted to remove the separate Ollama requirement. The Windows
-build bundles Python and the native engine. No EXE was compiled here.
+THIS IS SOURCE/BUILD CODE, NOT A COMPILED WINDOWS INSTALLER.
+Nothing has been uploaded, built or published to your GitHub account by this chat.
 
-NO DEVELOPMENT TOOLS ON YOUR LAPTOP: USE THE GITHUB BUILD
-1. Extract this ZIP.
-2. Upload the CONTENTS of the JUPITAR folder to your GitHub repository.
-   Include .github/workflows/windows.yml. Do not upload the ZIP as one file.
-3. In the repository Actions tab, run Build standalone Windows installer.
-4. If the build succeeds, download JUPITAR-Standalone-Windows-Installer.
-5. Extract that artifact and run JUPITAR-Setup-0.3.0-preview.exe.
-6. Open JUPITAR. Use its AI Setup screen to download the models once.
+QUICK VISUAL CHECK
+Open ui/index.html in your browser. It is a VISUAL-ONLY preview, not the desktop
+app. Open site/index.html to preview the website. Font fallback is expected until
+Rajdhani is installed or downloaded by the build. Screenshots are in previews/.
 
-No Python installation, Ollama, terminal, or API key is required by the BUILT app.
-The build has not been executed here; errors must be resolved before an installer
-exists. Detailed browser-only instructions: docs/GET_INSTALLER.md.
-End-user instructions: docs/END_USER_INSTALL.md.
-Actual validation and remaining gaps: TEST_REPORT.md and docs/FEATURES.md.
+UPDATE YOUR EXISTING REPOSITORY
+1. Extract this ZIP. Upload the CONTENTS of its JUPITAR folder to your existing
+   repository, replacing same-named files. Keep main.py and requirements.txt at root.
+2. Replace .github/workflows/windows.yml with this version. Add pages.yml from
+   that same workflow folder. Hidden folders may need manual file creation.
+3. Run Build standalone Windows installer. It has NOT been run here.
+4. If successful, download the installer artifact and test the new Windows app.
 
-This is an unsigned preview, not a certified or production-ready Store product.
+PUBLISH THE WEBSITE
+Repository Settings > Pages > Build and deployment > Source: GitHub Actions.
+Run Publish JUPITAR website in Actions. A successful deployment shows the site URL.
+
+ALLOW PUBLIC DOWNLOADS
+Test the installer first. Create/publish a GitHub Release and attach the EXE plus
+SHA256.txt. The site enables Download only when it finds a public installer asset.
+A private Actions artifact is NOT a public download. A draft release is NOT public.
+
+DETAILED GUIDE: docs/UPDATE_AND_PUBLISH.md
+TESTS AND LIMITS: TEST_REPORT.md

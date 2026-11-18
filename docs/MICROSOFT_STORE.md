@@ -25,3 +25,5 @@ Current policies:
 https://learn.microsoft.com/en-us/windows/apps/publish/store-policies
 
 No account, signing, hosting, reservation or submission action was performed here.
+
+For the 0.4 visual/progress/website update, follow UPDATE_AND_PUBLISH.md.

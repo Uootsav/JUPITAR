@@ -1,0 +1,9 @@
+{
+  "frontend_errors": [],
+  "hud_controls": "setup/settings/escape/send/progress passed",
+  "website_empty_release": "passed",
+  "website_release_fixture": "passed",
+  "website_api_failure": "passed",
+  "website_mobile_no_overflow": "passed",
+  "hud_mobile_no_overflow": "passed"
+}

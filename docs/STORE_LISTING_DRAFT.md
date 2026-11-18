@@ -13,3 +13,5 @@ is not bundled. No automatic purchases, payments or email sending.
 
 Add real screenshots, privacy/support links, final requirements, price and age
 rating. Do not publish this draft or advertise unimplemented features.
+
+For the 0.4 visual/progress/website update, follow UPDATE_AND_PUBLISH.md.

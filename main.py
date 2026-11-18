@@ -5,5 +5,5 @@ if __name__=='__main__':
         from jupitar.selftest import run
         i=sys.argv.index('--self-test')
         raise SystemExit(run(sys.argv[i+1]))
-    from jupitar.app import main
+    from jupitar.desktop import main
     main()

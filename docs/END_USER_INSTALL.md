@@ -1,6 +1,6 @@
 # Install a successfully built JUPITAR preview
 
-1. Obtain JUPITAR-Setup-0.3.0-preview.exe from a trusted, successful publisher build.
+1. Obtain JUPITAR-Setup-0.4.0-preview.exe from a trusted, successful publisher build.
 2. Review its origin and SHA-256. This preview is unsigned; do not blindly bypass
    Windows security warnings or disable protections.
 3. Run the installer. It installs for your Windows account without requesting
@@ -10,8 +10,7 @@
    Internet is required once. Downloads are several GB; at least 6 GiB free disk
    space is checked for model data and temporary files. Download time varies.
 6. Wait for verification. If interrupted, retry; cached partial data is reused
-   where supported. Cancellation takes effect between file operations, not always
-   immediately. The wizard shows stages, not an exact percentage or ETA.
+   where supported. Pause takes effect between chunks; a stalled read may wait for its timeout. The wizard shows measured bytes, percentage, speed and estimated remaining time; verification is separate.
 7. Say Hey Jupitar or type. Settings changes the assistant name and wake phrase.
    Headphones are recommended. Use MIC to turn listening off.
 8. Disconnect networking to test supported local features. Browser search, support
@@ -34,3 +33,5 @@ folder yourself after backing up wanted workspace documents. No autostart is ins
 Troubleshooting: AI Setup repairs components before the engine is loaded; close
 and reopen the app before repair. A source ZIP cannot be installed like an EXE.
 See TEST_REPORT.md for what has and has not been tested.
+
+For the 0.4 visual/progress/website update, follow UPDATE_AND_PUBLISH.md.

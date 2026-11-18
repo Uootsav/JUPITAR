@@ -38,3 +38,10 @@ Unchecked items have NOT been validated by the supplied automated tests.
 - [ ] Verify no external inference traffic after setup.
 - [ ] Test first-launch wizard and actual Gemma text/vision compatibility.
 - [ ] Audit all bundled binary licenses and lock tested dependencies.
+
+## 0.4 release gates
+- [ ] Build the Qt/Chromium package on Windows and validate frozen smoke test.
+- [ ] Test native bridge, transparent orb, drag, minimize/restore and multiple DPI.
+- [ ] Test actual HTTPS downloads, pause/resume, speed/ETA and disk-full behavior.
+- [ ] Enable Pages, deploy, and verify public release downloads without login.
+- [ ] Audit Qt/Chromium notices and sign a tested installer before broad release.

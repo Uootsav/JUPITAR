@@ -9,3 +9,5 @@ The original code remains MIT, so selling a build does not prevent redistributio
 under that license. Keep source and binaries clearly distinguished. Publish only
 a tested prerelease until acceptance checks pass. No GitHub action was taken by
 this chat; you control repository creation, builds and releases.
+
+For the 0.4 visual/progress/website update, follow UPDATE_AND_PUBLISH.md.

@@ -1,4 +1,4 @@
-# 0.3.0 scope
+# 0.4.0 scope
 
 Implemented in source: embedded-engine lifecycle; authenticated loopback transport;
 first-launch component wizard; checksum verification; custom identity/wake phrase;
@@ -23,3 +23,11 @@ quality is unmeasured. Cleanup only considers old top-level standard user Temp
 files; it is not recursive system cleanup. Recycle Bin deletion is irreversible.
 STOP prevents subsequent actions but cannot undo completed work. Reminders need
 the app running. Wake matching is transcript-based, not a trained custom detector.
+
+For the 0.4 visual/progress/website update, follow UPDATE_AND_PUBLISH.md.
+
+## 0.4 frontend
+The entry point now uses jupitar/desktop.py (Qt WebEngine). ui/ contains the real
+frontend and original orbital renderer. transfer.install is the measured downloader.
+The old Tk frontend is not included. The website and deployment workflow are source
+only until the publisher uploads and deploys them. Native integration remains untested.

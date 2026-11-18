@@ -1,46 +1,56 @@
-# J.U.P.I.T.A.R. - standalone architecture preview 0.3.0
+# J.U.P.I.T.A.R. / Orbital Edition 0.4 preview
 ## Just-in-time Unified Personal Intelligence for Tasks, Automation & Reasoning
 
-**Source/build package, not a compiled installer.** Windows 10/11 x64 and 16 GB
-RAM are unvalidated targets. No EXE, MSIX, model weights or font binaries are in
-this ZIP. Read START HERE.txt before doing anything else.
+![Actual frontend preview](site/assets/command-center.png)
 
-## What changed
-- Removed the external Ollama runtime and its fixed-port API connection.
-- Added an app-managed native llama.cpp engine, built into the Windows package.
-- Added a first-launch AI Setup wizard for explicit model downloads and repair.
-- Model weights are SHA-256 checked against upstream LFS metadata when available.
-- Added a pinned native-engine build, bundled Python runtime, frozen-app smoke
-  test, and Inno Setup installer build in GitHub Actions.
-- End users of a successful build do not install Python, Ollama or pip packages.
-- The app starts/stops its own engine on loopback with a per-session secret.
-  Built-in engine tools, web UI and remote inference are not enabled.
+Original cinematic command center, a transparent floating orbital core, measured
+AI download progress, and a matching public website. Source/build package only:
+no compiled EXE or hosted site is included. Windows integration is untested.
 
-## Get the installer
-See docs/GET_INSTALLER.md. The GitHub workflow performs the Windows compilation;
-you do not need development tools on your laptop. It has NOT been run from this
-chat, so an installer is not yet available. A successful run produces an unsigned
-JUPITAR-Setup-0.3.0-preview.exe. Do not confuse this source ZIP with that output.
+## What changed from 0.3
+- Replaced the Tkinter frontend with a Qt WebEngine HTML/CSS/Canvas interface.
+- Luminous mesh core, independent orbital paths, satellites, layered rings and
+  real microphone-energy response. State labels reflect actual backend state.
+- Separate frameless, transparent, always-on-top orb window with native drag,
+  open/mute/hide controls. Windows transparency/drag still needs device testing.
+- Measured aggregate download percentage, bytes/total, rolling speed and ETA.
+  Pause/resume uses HTTP Range when supported. Verification is a separate stage.
+- Static premium website with the same orbital renderer, actual frontend preview,
+  capability/limitations sections, setup explanation, FAQ and support link.
+- Website checks public GitHub Releases for a real installer asset. No fake
+  download button or hardcoded claim that a build is available.
+- GitHub Pages workflow and optional DRAFT prerelease creation after successful build.
 
-## Existing capabilities retained
-Local typed chat; customizable name/wake phrase; local Whisper speech recognition;
-Windows offline voice output; cyan HUD, system stats and floating orb; approved
-memory/notes; reminders; opt-in check-ins; one-shot consented screen analysis;
-bounded action plans; permission-gated apps/files/documents/media controls;
-cleanup with typed confirmation; no automatic payments or purchases.
+## Use the update
+Read START HERE.txt and docs/UPDATE_AND_PUBLISH.md. Upload the extracted project
+contents into the existing repository, preserving the root layout and workflows.
+A successful Windows workflow produces the unsigned test installer. Enable Pages
+with GitHub Actions to publish site/. Publish a tested installer as a Release to
+activate public downloads. No account changes were made by this package.
 
-## Remaining limits
-Natural neural multilingual TTS, universal desktop automation, robust echo
-cancellation, code signing, MSIX and Store certification are NOT completed.
-CPU inference is the default; GPU acceleration is not configured. No performance
-claim is made. Hindi/Gujarati recognition and conversation need native-speaker
-testing. Gujarati natural speech is not bundled. See docs/FEATURES.md.
+## Preview without installing anything
+Open ui/index.html in a browser for the visual-only desktop preview. Open
+site/index.html for the website. Browser previews cannot access the microphone,
+files or local AI. Preview fonts fall back if Rajdhani is absent; build workflows
+download Rajdhani and its original license before packaging/deployment.
 
-## Developer
-Run python -m unittest discover -s tests -v. Build tools are needed only on a
-Windows build machine, not on end-user devices. tools/build_windows.ps1 requires
-Python 3.11, Git, CMake, Visual Studio C++ tools and Inno Setup 6; GitHub provisions
-the hosted build environment. Original code remains MIT under the earlier choice.
-Models, fonts and dependencies retain their own licenses. Name rights are uncleared.
+## Existing backend
+App-managed local llama.cpp engine, local Whisper speech recognition, installed
+Windows SAPI voice output, approved memory, reminders, bounded tools/plans and
+consented one-shot screen analysis. No separate Python/Ollama installation for
+users of a successful compiled build. Models download explicitly on first launch.
+
+## Honest boundaries
+58 isolated tests and browser UI tests passed; see TEST_REPORT.md. No Windows
+installer, Qt native bridge, native orb, actual model transfer, inference, audio,
+16 GB performance, code signing or Store certification was validated here.
+Natural neural Gujarati TTS, universal desktop automation and robust echo
+cancellation remain unfinished. Qt WebEngine increases package size and RAM use;
+16 GB is a target, not a measured guarantee. This is not movie-equivalent AI.
+
+## License and support
+Original code remains MIT, Uootsav. Review all Qt/PySide, Chromium, model, font
+and dependency terms before redistribution/sale. Notices collection is not a
+complete legal audit. Name/trademark clearance has not been performed.
 
 [Support development](https://paypal.me/Uootsav)

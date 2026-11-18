@@ -25,8 +25,11 @@ Copy-Item vendor/llama.cpp/LICENSE engine/llama.cpp-LICENSE.txt -Force
 if (Test-Path vendor/llama.cpp/licenses) { Copy-Item vendor/llama.cpp/licenses engine/upstream-licenses -Recurse -Force }
 python tools/download_font.py
 Check 'font and license download'
-python -m PyInstaller --noconfirm --clean --onedir --windowed --name JUPITAR --collect-all faster_whisper --collect-all ctranslate2 --collect-all tokenizers --collect-all sounddevice --collect-all av --collect-all onnxruntime --collect-all huggingface_hub --collect-all PIL --collect-all psutil --add-data 'assets;assets' --add-binary 'engine/llama-server.exe;engine' --add-data 'engine;engine' main.py
+python -m PyInstaller --noconfirm --clean --onedir --windowed --name JUPITAR --collect-all faster_whisper --collect-all ctranslate2 --collect-all tokenizers --collect-all sounddevice --collect-all av --collect-all onnxruntime --collect-all huggingface_hub --collect-all PIL --collect-all psutil --add-data 'assets;assets' --add-data 'ui;ui' --hidden-import PySide6.QtWebEngineWidgets --hidden-import PySide6.QtWebChannel --add-binary 'engine/llama-server.exe;engine' --add-data 'engine;engine' main.py
 Check 'application bundle'
+python tools/collect_notices.py
+Check 'dependency notices'
+Copy-Item THIRD_PARTY_NOTICES dist/JUPITAR/THIRD_PARTY_NOTICES -Recurse -Force
 Copy-Item LICENSE dist/JUPITAR/LICENSE.txt -Force
 Copy-Item THIRD_PARTY.md dist/JUPITAR/THIRD_PARTY.md -Force
 $report = Join-Path (Get-Location) 'frozen-smoke-test.json'

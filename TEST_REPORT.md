@@ -1,28 +1,40 @@
-# Actual validation - 0.3.0 standalone source preview
+# Actual validation report - JUPITAR 0.4 Orbital Edition
 
-42 isolated tests passed in the Linux authoring sandbox. Python source syntax
-checks passed. Tests cover original action boundaries and custom identity, plus
-native command construction, environment isolation, session tokens, real local
-HTTP transport with authentication, mocked downloads, checksum failure, missing
-components, cancellation, low disk space and activation markers.
+## Passed in the authoring environment
+- 58 isolated Python tests (core actions, identity, local transport, mocked component
+  installation, range resume/restart, size/hash checks, pause, speed/ETA math).
+- Python source syntax and JavaScript syntax checks.
+- YAML structure parsing for Windows build and Pages deployment workflows.
+- Headless Chromium rendering of the actual HUD and website frontend.
+- Browser checks: setup/settings dialogs, Escape, typed preview response, progress
+  percentage/ETA rendering, empty-release state, synthetic published-release state,
+  API-failure fallback, mobile no-horizontal-overflow checks for site and HUD.
+- No JavaScript page errors in the HUD browser check.
+- Floating-orb frontend rendered with transparent screenshot background.
 
-The HTTP test uses a fake local server, NOT the real AI engine. Download tests
-use synthetic test bytes, NOT actual model weights. These do not establish AI
-quality or end-to-end functionality.
+## What the previews mean
+site/assets/command-center.png is a real screenshot of the frontend in browser
+preview mode, not a tested Windows app. Telemetry is shown as unavailable rather
+than fabricated. The download-dialog screenshot uses explicitly labeled UI test
+fixtures. Website example speed/ETA numbers are labeled illustrative. Browser
+release tests use synthetic metadata, not a real published installer.
 
-NOT executed: Windows native compilation, GitHub workflow, PyInstaller bundle,
-Inno installer, frozen smoke test, Windows job object, Windows GUI, microphone,
-SAPI voices, actual model downloads, inference, screen capture, cleanup, Recycle
-Bin, 16 GB performance, clean-machine install/uninstall or Store submission.
-The sandbox has no Windows build toolchain/Wine and lacks Tk GUI support.
-No EXE, MSIX, signing certificate, native binary or model is included in this ZIP.
-Font download in the earlier authoring attempt returned HTTP 403; Windows build
-fetches Rajdhani and its original license and fails if that download fails.
+Rajdhani could not be downloaded in this environment (HTTP 403), so screenshots
+use fallback fonts. Both build/deploy workflows download the TTF and OFL license.
+No font binary is included in this source ZIP.
 
-The Windows workflow contains a frozen smoke test but it has not run here.
-No GitHub repository, build, release, Store action or payment was performed.
+## Not performed
+No Windows compilation, installer execution, native Qt bridge/window/transparency/
+drag test, actual multi-GB model download, inference, audio, cleanup, Recycle Bin,
+16 GB performance measurement, signing, Store certification, GitHub repository
+mutation, Pages deployment or public release publication. PySide6 is not installed
+in this sandbox; the HTML/CSS/Canvas layer was tested in Chromium, not in native Qt.
 
-## Test output
+Qt/Chromium increases package size and resource use. Audit exact licenses and
+measure real hardware before sale. The new frozen smoke test is in the Windows
+workflow but has not run here. No EXE/MSIX/native engine/model weights are included.
+
+## Unit-test output
 ```
 test_bad_names (test_core.CoreTests.test_bad_names) ... ok
 test_default_listening (test_core.CoreTests.test_default_listening) ... ok
@@ -66,10 +78,39 @@ test_request_auth_loopback (test_standalone.StandaloneTests.test_request_auth_lo
 test_safe_native_command (test_standalone.StandaloneTests.test_safe_native_command) ... ok
 test_strip_inherited_agent (test_standalone.StandaloneTests.test_strip_inherited_agent) ... ok
 test_unique_tokens (test_standalone.StandaloneTests.test_unique_tokens) ... ok
+test_bad_blob (test_transfer.TransferTests.test_bad_blob) ... ok
+test_bad_checksum (test_transfer.TransferTests.test_bad_checksum) ... ok
+test_bad_range (test_transfer.TransferTests.test_bad_range) ... ok
+test_checksum (test_transfer.TransferTests.test_checksum) ... ok
+test_fresh_transfer (test_transfer.TransferTests.test_fresh_transfer) ... ok
+test_full_mock_install (test_transfer.TransferTests.test_full_mock_install) ... ok
+test_git_blob (test_transfer.TransferTests.test_git_blob) ... ok
+test_https_only (test_transfer.TransferTests.test_https_only) ... ok
+test_no_downgrade (test_transfer.TransferTests.test_no_downgrade) ... ok
+test_oversize (test_transfer.TransferTests.test_oversize) ... ok
+test_pause (test_transfer.TransferTests.test_pause) ... ok
+test_rate_eta (test_transfer.TransferTests.test_rate_eta) ... ok
+test_rate_warmup (test_transfer.TransferTests.test_rate_warmup) ... ok
+test_resume (test_transfer.TransferTests.test_resume) ... ok
+test_server_ignores_range (test_transfer.TransferTests.test_server_ignores_range) ... ok
+test_truncated (test_transfer.TransferTests.test_truncated) ... ok
 
 ----------------------------------------------------------------------
-Ran 42 tests in 2.318s
+Ran 58 tests in 1.609s
 
 OK
 
+```
+
+## Browser test summary
+```json
+{
+  "frontend_errors": [],
+  "hud_controls": "setup/settings/escape/send/progress passed",
+  "website_empty_release": "passed",
+  "website_release_fixture": "passed",
+  "website_api_failure": "passed",
+  "website_mobile_no_overflow": "passed",
+  "hud_mobile_no_overflow": "passed"
+}
 ```
