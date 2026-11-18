@@ -1,0 +1,16 @@
+{
+  "app": "JUPITAR",
+  "version": "0.3.0-preview",
+  "full_form": "Just-in-time Unified Personal Intelligence for Tasks, Automation & Reasoning",
+  "source_package": true,
+  "compiled_installer_included": false,
+  "windows_build_executed": false,
+  "store_ready": false,
+  "external_ollama_required": false,
+  "end_user_python_install_required_for_built_app": false,
+  "build_workflow": ".github/workflows/windows.yml",
+  "local_engine": "bundled llama.cpp native process",
+  "target": "Windows x64, 16 GB RAM (unvalidated)",
+  "tests_passed": 42,
+  "support": "https://paypal.me/Uootsav"
+}

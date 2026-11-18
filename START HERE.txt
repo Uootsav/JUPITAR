@@ -1,0 +1,22 @@
+JUPITAR 0.3.0 - STANDALONE INSTALLER BUILD PACKAGE
+
+IMPORTANT: This ZIP is SOURCE CODE, not a ready-to-run Windows installer.
+The app was converted to remove the separate Ollama requirement. The Windows
+build bundles Python and the native engine. No EXE was compiled here.
+
+NO DEVELOPMENT TOOLS ON YOUR LAPTOP: USE THE GITHUB BUILD
+1. Extract this ZIP.
+2. Upload the CONTENTS of the JUPITAR folder to your GitHub repository.
+   Include .github/workflows/windows.yml. Do not upload the ZIP as one file.
+3. In the repository Actions tab, run Build standalone Windows installer.
+4. If the build succeeds, download JUPITAR-Standalone-Windows-Installer.
+5. Extract that artifact and run JUPITAR-Setup-0.3.0-preview.exe.
+6. Open JUPITAR. Use its AI Setup screen to download the models once.
+
+No Python installation, Ollama, terminal, or API key is required by the BUILT app.
+The build has not been executed here; errors must be resolved before an installer
+exists. Detailed browser-only instructions: docs/GET_INSTALLER.md.
+End-user instructions: docs/END_USER_INSTALL.md.
+Actual validation and remaining gaps: TEST_REPORT.md and docs/FEATURES.md.
+
+This is an unsigned preview, not a certified or production-ready Store product.
